@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-// número da conta vem por argumento
+// número da conta vem por argumento.
 const accountId = process.argv[2];
 
 if (!accountId) {
