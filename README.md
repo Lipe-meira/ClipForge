@@ -1,47 +1,61 @@
-#ClipForge
+<h1 align="center"><b>ClipForge (English)</b></h1>
 
-ClipForge is a video automation engine that uses browser automation (Playwright) to control web-based video generation platforms, enabling automatic video creation from a single image and a custom script.
+<p>ClipForge is a video automation engine that uses browser automation (Playwright) to control web-based video
+    generation platforms, enabling automatic video creation from a single image and a custom script.</p>
 
-The project was built to simulate real user interactions on platforms that do not provide a public API, automating the entire video creation pipeline: opening the website, selecting models, uploading images, inserting scripts, triggering generation, monitoring the process, and downloading the final video.
+<h2>📖 About</h2>
 
-ClipForge was designed as a modular foundation that can be controlled by graphical interfaces, scripts, automation pipelines, or orchestrators such as n8n, and is prepared to support multiple accounts, execution queues, and additional platforms in the future.
+<p>The project was built to simulate real user interactions on platforms that do not provide a public API, automating
+    the entire video creation pipeline: opening the website, selecting models, uploading images, inserting scripts,
+    triggering generation, monitoring the process, and downloading the final video.</p>
 
-Key features
+<p>ClipForge was designed as a modular foundation that can be controlled by graphical interfaces, scripts, automation
+    pipelines, or orchestrators such as n8n, and is prepared to support multiple accounts, execution queues, and
+    additional platforms in the future.</p>
 
-Real browser automation with Playwright
+<h2>🗝️ Key features </h2>
 
-Multi-account support
+<ul>
+    <li>Real browser automation with Playwright</li>
 
-Reliable automated video generation
+    <li>Multi-account support</li>
 
-Intelligent detection of generated videos
+    <li>Reliable automated video generation</li>
 
-Direct download of final outputs
+    <li>Intelligent detection of generated videos</li>
 
-Ready for GUI apps and automation pipelines
+    <li>Direct download of final outputs</li>
 
-Focused on stability, modularity, and scalability
+    <li>Ready for GUI apps and automation pipelines</li>
 
-ClipForge (Português)
+    <li>Focused on stability, modularity, and scalability</li>
+</ul>
 
-ClipForge é uma engine de automação de vídeos que utiliza browser automation (Playwright) para controlar plataformas de geração de vídeo baseadas na web, permitindo a criação automática de vídeos a partir de uma única imagem e de um roteiro personalizado.
 
-O projeto foi desenvolvido para simular interações reais de usuários em plataformas que não possuem API pública, automatizando todo o pipeline de criação de vídeos: abertura do site, seleção de modelos, envio de imagens, inserção de roteiros, disparo da geração, monitoramento do processo e download do vídeo final.
+<h1 align="center"><b>ClipForge (Português)</b></h1>
 
-O ClipForge foi projetado como uma base modular, podendo ser controlado por interfaces gráficas, scripts, pipelines de automação ou orquestradores como o n8n, estando preparado para suportar múltiplas contas, filas de execução e novas plataformas no futuro.
+<p>ClipForge é uma engine de automação de vídeos que utiliza browser automation (Playwright) para controlar plataformas
+    de geração de vídeo baseadas na web, permitindo a criação automática de vídeos a partir de uma única imagem e de um
+    roteiro personalizado.</p>
 
-Principais recursos
+<h2>📖 Em geral</h2>
+<p>O projeto foi desenvolvido para simular interações reais de usuários em plataformas que não possuem API pública,
+    automatizando todo o pipeline de criação de vídeos: abertura do site, seleção de modelos, envio de imagens, inserção
+    de roteiros, disparo da geração, monitoramento do processo e download do vídeo final.</p>
 
-Automação real de navegador com Playwright
+<p>O ClipForge foi projetado como uma base modular, podendo ser controlado por interfaces gráficas, scripts, pipelines
+    de automação ou orquestradores como o n8n, estando preparado para suportar múltiplas contas, filas de execução e
+    novas plataformas no futuro.</p>
 
-Suporte a múltiplas contas
+<h2>🗝️ Principais recursos</h2>
 
-Geração automática e confiável de vídeos
+<ul>
 
-Detecção inteligente dos vídeos gerados
-
-Download direto dos arquivos finais
-
-Preparado para interfaces gráficas e pipelines de automação
-
-Foco em estabilidade, modularidade e escalabilidade
+    <li>Automação real de navegador com Playwright</li>
+    <li>Suporte a múltiplas contas</li>
+    <li>Geração automática e confiável de vídeos</li>
+    <li>Detecção inteligente dos vídeos gerados</li>
+    <li>Download direto dos arquivos finais</li>
+    <li>Preparado para interfaces gráficas e pipelines de automação</li>
+    <li>Foco em estabilidade, modularidade e escalabilidade</li>
+</ul>
