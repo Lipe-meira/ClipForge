@@ -15,21 +15,14 @@
 
 <h2>🗝️ Key features </h2>
 
-<ul>
-    <li>Real browser automation with Playwright</li>
+- Real browser automation with Playwright  
+- Multi-account support  
+- Reliable automated video generation  
+- Intelligent detection of generated videos  
+- Direct download of final outputs  
+- Ready for GUI apps and automation pipelines  
+- Focused on stability, modularity, and scalability  
 
-    <li>Multi-account support</li>
-
-    <li>Reliable automated video generation</li>
-
-    <li>Intelligent detection of generated videos</li>
-
-    <li>Direct download of final outputs</li>
-
-    <li>Ready for GUI apps and automation pipelines</li>
-
-    <li>Focused on stability, modularity, and scalability</li>
-</ul>
 
 
 <h1 align="center"><b>ClipForge (Português)</b></h1>
@@ -49,13 +42,11 @@
 
 <h2>🗝️ Principais recursos</h2>
 
-<ul>
+- Automação real de navegador com Playwright  
+- Suporte a múltiplas contas  
+- Geração automática e confiável de vídeos  
+- Detecção inteligente dos vídeos gerados  
+- Download direto dos arquivos finais  
+- Preparado para interfaces gráficas e pipelines de automação  
+- Foco em estabilidade, modularidade e escalabilidade  
 
-    <li>Automação real de navegador com Playwright</li>
-    <li>Suporte a múltiplas contas</li>
-    <li>Geração automática e confiável de vídeos</li>
-    <li>Detecção inteligente dos vídeos gerados</li>
-    <li>Download direto dos arquivos finais</li>
-    <li>Preparado para interfaces gráficas e pipelines de automação</li>
-    <li>Foco em estabilidade, modularidade e escalabilidade</li>
-</ul>
