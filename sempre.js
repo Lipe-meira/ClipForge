@@ -39,7 +39,6 @@ if (!accountId) {
     console.log('Site aberto e logado.');
 
 
-    console.log(' Feche o navegador quando quiser encerrar a sessão.');
 
     await page.waitForTimeout(2000);
 
@@ -65,7 +64,32 @@ if (!accountId) {
     console.log('🤖 Modelo selecionado: Sora 2 Free (Beta)');
     await page.waitForTimeout(1000);
 
+    const roteiro =
+      'testeeeeeeeeee';
 
+    const textarea = await page.waitForSelector(
+      'textarea[placeholder^="De acordo com as regras da OpenAI"]',
+      { timeout: 15000 }
+    );
+
+    await page.evaluate(
+      ({ textarea, roteiro }) => {
+        const setter = Object.getOwnPropertyDescriptor(
+          HTMLTextAreaElement.prototype,
+          'value'
+        ).set;
+
+        setter.call(textarea, roteiro);
+        textarea.dispatchEvent(new Event('input', { bubbles: true }));
+        textarea.dispatchEvent(new Event('change', { bubbles: true }));
+      },
+      { textarea, roteiro }
+    );
+
+    console.log(' Roteiro inserido corretamente');
+
+
+    console.log(' Feche o navegador quando quiser encerrar a sessão.');
     await page.waitForEvent('close');
 
   } catch (err) {
