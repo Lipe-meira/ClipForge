@@ -88,9 +88,19 @@ if (!accountId) {
 
     console.log(' Roteiro inserido corretamente');
 
+    // 5️⃣ Anexar imagem
+    const imagePath = 'C:/n8n/files/uploads/produto.png'; //add dynamic path after tests
+    const fileInput = page.locator('input[type="file"]');
+
+    await fileInput.waitFor({ state: 'attached' });
+    await fileInput.setInputFiles(imagePath);
+
+    console.log('🖼️ Imagem anexada com sucesso');
+
+ 
 
     console.log(' Feche o navegador quando quiser encerrar a sessão.');
-    await page.waitForEvent('close');
+    // await page.waitForEvent('close');
 
   } catch (err) {
     console.error('❌ Erro inesperado:', err);
