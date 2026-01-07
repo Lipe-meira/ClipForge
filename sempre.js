@@ -166,6 +166,32 @@ if (!accountId) {
     console.log('🎥 NOVO vídeo gerado:', generatedVideoUrl);
 
 
+    // 9️⃣ Baixar vídeo
+    const downloadDir = 'C:/n8n/videos';
+    if (!fs.existsSync(downloadDir)) {
+      fs.mkdirSync(downloadDir, { recursive: true });
+    }
+
+    const filePath = path.join(
+      downloadDir,
+      `video_${accountId}_${Date.now()}.mp4`
+    );
+
+    await new Promise((resolve, reject) => {
+      const file = fs.createWriteStream(filePath);
+
+      https.get(generatedVideoUrl, response => {
+        response.pipe(file);
+        file.on('finish', () => file.close(resolve));
+      }).on('error', err => {
+        fs.unlink(filePath, () => { });
+        reject(err);
+      });
+    });
+
+    console.log('⬇️ Vídeo baixado com sucesso:', filePath);
+    console.log('✅ Fluxo COMPLETO finalizado com sucesso');
+
     console.log(' Feche o navegador quando quiser encerrar a sessão.');
     // await page.waitForEvent('close');
 
