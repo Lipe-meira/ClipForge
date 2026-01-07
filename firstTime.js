@@ -55,5 +55,5 @@ if (!accountId) {
   console.log('✅ Sessão salva com sucesso!');
   console.log(`📁 Conta ${accountId} salva em ${storagePath}`);
 
-  // await browser.close();
+  await browser.close();
 })();

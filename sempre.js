@@ -40,6 +40,32 @@ if (!accountId) {
 
 
     console.log(' Feche o navegador quando quiser encerrar a sessão.');
+
+    await page.waitForTimeout(2000);
+
+    // 1️⃣ Abrir aba Imagem para Vídeo
+    await page.getByRole('link', { name: 'Imagem para Vídeo' }).click();
+    await page.waitForURL('**/pt/image-to-video/**', { timeout: 30000 });
+    console.log('➡️ Aba Imagem para Vídeo aberta');
+
+    await page.waitForTimeout(1500);
+
+    // 2️⃣ Abrir selecao IA
+    const currentModel = page.locator('.ant-select-selection-item').first();
+    await currentModel.waitFor({ state: 'visible' });
+    await currentModel.click();
+
+    await page.waitForTimeout(600);
+
+    // 3️⃣ Selecionar Sora 2 
+    const soraOption = page.locator('div[data-value="154"]');
+    await soraOption.waitFor({ state: 'visible' });
+    await soraOption.click();
+
+    console.log('🤖 Modelo selecionado: Sora 2 Free (Beta)');
+    await page.waitForTimeout(1000);
+
+
     await page.waitForEvent('close');
 
   } catch (err) {
