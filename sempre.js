@@ -97,7 +97,74 @@ if (!accountId) {
 
     console.log('🖼️ Imagem anexada com sucesso');
 
- 
+    // 🔎 Capturar vídeos existentes (exemplo / anteriores)
+    const existingVideoSrcs = await page.evaluate(() => {
+      return Array.from(document.querySelectorAll('video'))
+        .map(v => v.src)
+        .filter(Boolean);
+    });
+
+    console.log('📼 Vídeos existentes antes da geração:', existingVideoSrcs);
+
+    // 6️⃣ Esperar botão Criar entrar no ESTADO REAL de clique
+    console.log('⏳ Aguardando botão Criar ficar realmente clicável...');
+
+    await page.waitForFunction(() => {
+      const btn = [...document.querySelectorAll('button')]
+        .find(b => b.innerText.trim() === 'Criar');
+
+      if (!btn) return false;
+
+      const cls = btn.className || '';
+      return cls.includes('cursor-pointer') && cls.includes('bg-white');
+    }, { timeout: 60000 });
+
+    console.log('🟢 Botão Criar pronto para clique');
+
+    // 7️⃣ Clique REAL (React-safe)
+    await page.evaluate(() => {
+      const btn = [...document.querySelectorAll('button')]
+        .find(b => b.innerText.trim() === 'Criar');
+
+      if (!btn) throw new Error('Botão Criar não encontrado');
+
+      btn.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
+      btn.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+      btn.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
+      btn.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    });
+
+    console.log('🎬 Clique em Criar ACEITO pelo React');
+
+    // 8️⃣ Esperar surgir NOVO vídeo (ignora exemplo)
+    console.log('⏳ Aguardando NOVO vídeo ser gerado...');
+
+    let generatedVideoUrl = null;
+
+    while (!generatedVideoUrl) {
+      generatedVideoUrl = await page.evaluate(existing => {
+        const videos = Array.from(document.querySelectorAll('video'));
+
+        const v = videos.find(v =>
+          v.src &&
+          !existing.includes(v.src) &&
+          (v.src.includes('/files/') || v.src.includes('/middle/')) &&
+          v.readyState === 4 &&
+          v.duration > 0 &&
+          !isNaN(v.duration)
+        );
+
+        return v ? v.src : null;
+      }, existingVideoSrcs);
+
+      if (!generatedVideoUrl) {
+        console.log('⏳ Ainda gerando...');
+        await page.waitForTimeout(5000);
+      }
+    }
+
+    console.log('🎥 NOVO vídeo gerado:', generatedVideoUrl);
+
 
     console.log(' Feche o navegador quando quiser encerrar a sessão.');
     // await page.waitForEvent('close');
